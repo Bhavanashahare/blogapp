@@ -129,19 +129,16 @@
                         <div class="card-header">Categories</div>
                         <div class="card-body">
                             <div class="row">
-                                @foreach($data as $d)
+
                                  <div class="col-sm-6">
+                                    @foreach($data as $d)
                                     <ul class="list-unstyled mb-0">
-                                        <li><a href="#!">   {{$d->name}}</a></li>
+                                    <li><a href="#!">   {{$d->name}}</a></li>
+                                </ul>
 
-
-
-
-                                        {{-- <li><a href="#!">HTML</a></li>
-                                        <li><a href="#!">Freebies</a></li> --}}
-                                    </ul>
+                                    @endforeach
                                 </div>
-                                @endforeach
+
                                 {{-- <div class="col-sm-6">
                                     <ul class="list-unstyled mb-0">
                                         <li><a href="#!">JavaScript</a></li>
