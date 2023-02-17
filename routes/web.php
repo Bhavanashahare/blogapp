@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\FrontController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MakeController;
@@ -15,9 +16,9 @@ use App\Http\Controllers\MakeController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 Route::get('category/create',[MakeController::class,'create'])->name('category.create');
 Route::post('category/store',[MakeController::class,'store'])->name('category.store');
 Route::get('category/table',[MakeController::class,'table'])->name('category.table');
@@ -29,3 +30,9 @@ Route::get('category/delete/{id}',[MakeController::class,'delete'])->name('categ
 
 Route::get('index',[FrontController::class,'index'])->name('index');
 
+Route::get('blog/create',[BlogController::class,'create'])->name('blog.create');
+Route::post('blog/store',[BlogController::class,'store'])->name('blog.store');
+Route::get('blog/table',[BlogController::class,'table'])->name('blog.table');
+Route::get('blog/edit/{id}',[BlogController::class,'edit'])->name('blog.edit');
+Route::post('blog/update/{id}',[BlogController::class,'update'])->name('blog.update');
+Route::get('blog/delete/{id}',[BlogController::class,'delete'])->name('blog.delete');

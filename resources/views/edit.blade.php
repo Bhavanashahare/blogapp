@@ -13,6 +13,7 @@
 <body>
 
     <div class="container">
+
         <h2>Edit</h2>
         <form action="{{ route('category.update', $data->id) }}" method="post">
             @csrf
@@ -20,7 +21,8 @@
                 <label for="name">category Name:</label>
                 <input type="text" class="form-control" id="name" placeholder="Enter name" name="name"
                     value="{{ $data->name }}">
-                @if ($errors->any())
+<!--validation-->
+                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
                             @foreach ($errors->all() as $error)
@@ -30,6 +32,7 @@
                     </div>
                 @endif
             </div>
+            <!--validation-->
 
             <button type="submit" class="btn btn-default">update</button>
         </form>

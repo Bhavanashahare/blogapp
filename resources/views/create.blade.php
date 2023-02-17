@@ -17,10 +17,11 @@
         <h2>form</h2>
         <form action="{{ route('category.store') }}" method="post">
             @csrf
+
             <div class="form-group">
                 <label for="name">category Name:</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
-                @if ($errors->any())
+                <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" value="{{old('name')}}">
+                  @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
                             @foreach ($errors->all() as $error)

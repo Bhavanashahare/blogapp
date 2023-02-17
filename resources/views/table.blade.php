@@ -20,12 +20,14 @@
         <button><a href="{{ route('category.create') }}">create</a></button>
         <br>
         <br>
+        <!--message-->
         @if (session()->has('msg'))
             <div class="alert alert-success alert-dismissable">
                 {{ session()->get('msg') }}
                 <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
             </div>
         @endif
+        <!--message-->
         <table class="table table-bordered">
             <thead>
                 <tr>
