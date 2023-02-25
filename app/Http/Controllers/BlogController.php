@@ -43,7 +43,7 @@ class BlogController extends Controller
 
     }
     public function table(){
-        $data=Blog::with('category')->get();
+        $data=Blog::with('category')->paginate(5);
         // dd($data);
         return view('blog.table',compact('data'));
     }
@@ -59,12 +59,12 @@ class BlogController extends Controller
         $this->validate($request,[
             'title'=>'required',
             'description'=>'required',
-
-            'image'=>'required',
         ]);
         $data=Blog::find($id);
         $data->title = $request->title;
         $data->description = $request->description;
+        $data->category_id = $request->category_id;
+
 
         if ($request->hasFile('image')) {
             $file = $request->image;

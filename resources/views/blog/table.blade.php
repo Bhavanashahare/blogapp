@@ -11,11 +11,11 @@
 </head>
 
 <body>
-    @if(session()->has('message'))
-    <div class="alert alert-success">
-        {{ session()->get('message') }}
-    </div>
-@endif
+    @if (session()->has('message'))
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
+    @endif
 
     <div class="container">
 
@@ -44,20 +44,20 @@
                         <td><img src="{{ asset('uploads/' . $d->image) }}"width="50px"height="50px" alt="">
                         </td>
 
-<!--relation-->
-                    <td>{{$d->category->name}}</td>
-<!--relation-->
+                        <!--relation-->
+                        <td>{{ $d->category->name }}</td>
+                        <!--relation-->
 
-                        <td><a href="{{ route('blog.edit', $d->id) }}"><button
-                                    type="button"class="btn btn-success">edit</button>
-                                    <a href="{{ route('blog.delete', $d->id) }}"><button
-                                        type="button"class="btn btn-danger">delete</button></td>
+
+<td><a href="{{ route('blog.edit', $d->id) }}"> <button class="btn btn-success">edit</button></a>
+    <a href="{{ route('blog.delete', $d->id) }}"> <button class="btn btn-danger">Delete</button></a></td>
 
 
                     </tr>
                 @endforeach
             </tbody>
         </table>
+        {{$data->links()}}
     </div>
 
 </body>

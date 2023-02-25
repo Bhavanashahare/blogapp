@@ -22,7 +22,7 @@ class MakeController extends Controller
 
     }
     public function table(){
-        $data= Make ::all();
+        $data= Make ::paginate(5);
         return view('table',compact ('data'));
     }
     public function edit($id){
