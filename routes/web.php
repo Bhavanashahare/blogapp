@@ -26,7 +26,6 @@ Route::get('category/delete/{id}',[MakeController::class,'delete'])->name('categ
 // FrontController
 
 Route::get('/',[FrontController::class,'index'])->name('index');
-
 Route::get('blog/create',[BlogController::class,'create'])->name('blog.create');
 Route::post('blog/store',[BlogController::class,'store'])->name('blog.store');
 Route::get('blog/table',[BlogController::class,'table'])->name('blog.table');
@@ -40,3 +39,11 @@ Route::get('blog/detail/{id}',[FrontController::class,'detail'])->name('blog.det
 
 Route::get('blog/about',[FrontController::class,'about'])->name('blog.about');
 Route::get('blog/contact',[FrontController::class,'contact'])->name('blog.contact');
+
+
+
+
+// Route::get('master',[FrontController::class,'master'])->name('master');
+Route::get('dashboard',[FrontController::class,'dashboard'])->name('dashboard');
+Route::get('category/{id}',[FrontController::class,'view'])->name('category.view');
+

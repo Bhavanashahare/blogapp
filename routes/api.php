@@ -18,8 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
- Route::post('store',[AuthController::class,'store']);
- Route::get('table',[AuthController::class,'table']);
- Route::post('update/{id}',[AuthController::class,'update']);
- Route::get('delete/{id}',[AuthController::class,'delete']);
+Route::post('/signup',[AuthController::class,'signup']);
+Route::post('/signin',[AuthController::class,'signin']);
+
+//  Route::post('store',[AuthController::class,'store']);
+//  Route::get('table',[AuthController::class,'table']);
+//  Route::post('update/{id}',[AuthController::class,'update']);
+//  Route::get('delete/{id}',[AuthController::class,'delete']);
 

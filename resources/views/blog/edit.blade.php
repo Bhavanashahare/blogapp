@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+
 </head>
 
 <body>
@@ -35,8 +37,8 @@
 
                 <div class="form-group">
                     <label for="description">description</label>
-                    <input type="text" class="form-control" id="description" placeholder="Enter description"
-                        name="description" value="{{ $data->title }}">
+                    <textarea type="text" class="form-control" id="description" placeholder="Enter description"
+                        name="description" value="{{ $data->title }}"></textarea>
                 </div>
 
                 <div class="form-group">
@@ -109,6 +111,13 @@
               <br> --}}
                 <br>
                 <button type="submit" class="btn btn-default">update</button>
+                <script>
+                    ClassicEditor
+                        .create( document.querySelector( '#description' ) )
+                        .catch( error => {
+                            console.error( error );
+                        } );
+                </script>
             </form>
         </div>
 

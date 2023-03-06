@@ -40,7 +40,7 @@
                 @foreach ($data as $d)
                     <tr>
                         <td>{{ $d->title }}</td>
-                        <td>{{ $d->description }}</td>
+                        <td>{!! $d->description !!}</td>
                         <td><img src="{{ asset('uploads/' . $d->image) }}"width="50px"height="50px" alt="">
                         </td>
 

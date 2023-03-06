@@ -25,8 +25,8 @@ class FrontController extends Controller
     public function detail($id)
     {
         $blogs = Blog::with('category')->find($id);
-        $data=Make::all();
-        return view('details', compact('blogs','data'));
+        $data = Make::all();
+        return view('details', compact('blogs', 'data'));
     }
 
 
@@ -38,7 +38,32 @@ class FrontController extends Controller
     {
         return view('contact');
     }
-    // public function detail(){
-    //     $data=Blog::all();
+
+    public function master()
+    {
+        return view('layouts.master');
+    }
+
+    // public function view($id)
+    // {
+    //   $category=Make::find($id);
+    //   $data = Make::paginate(3);
+    //   $blogs = Blog::where('category_id',$id)->get();
+    //   $latest_blog = Blog::latest()->first();
+    //   return view('welcome', compact('data', 'blogs', 'latest_blog'));
+    // }
+
+    public function view($id)
+    {
+
+        $data = Make::all();
+        $blogs = Blog::where('category_id',$id)->get();
+        // $latest_blog = Blog::latest()->first();
+        // return view('welcome', compact('data', 'blogs', 'latest_blog'));
+        return view ('dashboard',compact('data','blogs'));
+    }
 
 }
+
+// public function detail(){
+    //     $data=Blog::all();

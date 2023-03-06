@@ -37,7 +37,6 @@ class BlogController extends Controller
 
         }
 
-
         $data->save();
         return redirect()->route('blog.table')->with('message',"data add successfully");
 
