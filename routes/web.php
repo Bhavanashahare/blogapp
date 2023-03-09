@@ -43,7 +43,7 @@ Route::get('blog/contact',[FrontController::class,'contact'])->name('blog.contac
 
 
 
-// Route::get('master',[FrontController::class,'master'])->name('master');
+ Route::get('master',[FrontController::class,'master'])->name('master');
 Route::get('dashboard',[FrontController::class,'dashboard'])->name('dashboard');
 Route::get('category/{id}',[FrontController::class,'view'])->name('category.view');
 

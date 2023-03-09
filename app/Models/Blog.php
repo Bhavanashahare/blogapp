@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Make;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class Blog extends Model
 {
     use HasFactory;
+    use SoftDeletes;
 //relation
     public function category(){
         return $this->hasOne(Make::class,'id','category_id');
