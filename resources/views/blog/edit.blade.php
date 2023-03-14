@@ -77,7 +77,7 @@
               </select> --}}
 
 
-
+{{-- selected category --}}
                 <div class="mb-3 col-md-6">
                     <label class="form-label" for="category_id">Choose a category<span class="text-danger">
                             *</span></label>
@@ -90,6 +90,7 @@
                     </select>
 
                 </div>
+                {{-- end selected category --}}
 
 
 

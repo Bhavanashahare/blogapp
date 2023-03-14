@@ -22,9 +22,8 @@
                         <!-- Blog post-->
                         <div class="card mb-4">
 
-                            <a href="#!"><img class="card-img-top"
-                                    src="{{ asset('uploads/' . $blog->image) }}"width="700px" height="350px"
-                                    alt="..." /></a>
+                            <a href="#!"><img class="card-img-top" src="{{ asset('uploads/' . $blog->image) }}"
+                                width="750px" height="500px" alt="..." /></a>
                             <div class="card-body">
                                 <div class="small text-muted">January 1, 2022</div>
                                 <h2 class="card-title h4">{{ $blog->title }}</h2>
