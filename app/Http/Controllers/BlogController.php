@@ -47,8 +47,9 @@ class BlogController extends Controller
         return view('blog.table',compact('data'));
     }
     public function edit($id){
-
+// category  check model model is before one
         $category=Make::all();
+// category
         $data=Blog::find($id);
         return view('blog.edit',compact('data','category'));
     }
